@@ -1,9 +1,8 @@
 ///simple prime print
 #include <bits/stdc++.h>
 using namespace std;
+
 vector <int> prime;
-int List[1280];
-int listsize;
 long long int mx = 1e6+7;
 
 void siv()
