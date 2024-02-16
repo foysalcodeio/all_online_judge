@@ -1,0 +1,74 @@
+/**
+#include <bits/stdc++.h>
+using namespace std;
+int x,y,d;
+void extended_gcd(int a, int b) {
+    if(b==0){
+        x=1;
+        y=0;
+        d=a;
+        return;
+    }
+    extended_gcd(b, a%b);
+    int x1=y;
+    int y1=x-(a/b)*y;
+    x=x1;
+    y=y1;
+}
+
+int main() {
+    ios::sync_with_stdio(0); cin.tie(0);
+    auto start = std::chrono::high_resolution_clock::now();
+    auto stop = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(stop - start);
+    start = std::chrono::high_resolution_clock::now();
+
+    int a,b;
+    while(cin >> a >> b) {
+        extended_gcd(a,b);
+        //printf("%d %d %d\n",x,y,d);
+        cout << x << ' ' << y << ' ' << d << endl;
+    }
+
+    stop = std::chrono::high_resolution_clock::now();
+    duration = std::chrono::duration_cast<std::chrono::nanoseconds>(stop - start);
+    return 0;
+}
+**/
+
+
+// hardest way
+
+#include <bits/stdc++.h>
+#include <iostream>
+#include <chrono>
+using namespace std;
+
+tuple<int, int, int> extended_gcd(int a, int b) {
+    if (b == 0)
+        return {1, 0, a};
+    auto [x1, y1, d] = extended_gcd(b, a % b);
+    return {y1, x1 - (a / b) * y1, d};
+}
+
+int main(){
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+
+    auto start = chrono::high_resolution_clock::now();
+    auto stop = chrono::high_resolution_clock::now();
+    auto duration = chrono::duration_cast<chrono::nanoseconds>(stop - start);
+
+    start = chrono::high_resolution_clock::now();
+
+    int a, b;
+    while (cin >> a >> b) {
+        auto [x, y, d] = extended_gcd(a, b);
+        cout << x << ' ' << y << ' ' << d << endl;
+    }
+
+    stop = chrono::high_resolution_clock::now();
+    duration = chrono::duration_cast<chrono::nanoseconds>(stop - start);
+
+    return 0;
+}
