@@ -1,2 +1,6 @@
 using stl - string to binary
  - cout << bitset<8>(x) << endl;
+
+int powerOfTwo(int x){
+    return (x&&!(x&(x-1)));
+}
