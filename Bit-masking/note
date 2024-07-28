@@ -1,1 +1,2 @@
-
+using stl - string to binary
+ - cout << bitset<8>(x) << endl;
