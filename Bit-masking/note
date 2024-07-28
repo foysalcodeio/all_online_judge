@@ -4,3 +4,6 @@ using stl - string to binary
 int powerOfTwo(int x){
     return (x&&!(x&(x-1)));
 }
+
+//num to binary
+cout<<bitset<const_length>(number);
