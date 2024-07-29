@@ -1,3 +1,12 @@
+only set bit as k-th bit - 1<<(n-1)
+x<<y - multiplying - adding bit
+x>>y = dividing - remove bit 
+
+bit set - s | (1<<j)
+bit check 1 is present or not - s & (1<<i)
+bit clear - s & ~(1<<i)
+
+
 using stl - string to binary
  - cout << bitset<8>(x) << endl;
 
