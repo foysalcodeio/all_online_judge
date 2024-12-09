@@ -1,5 +1,7 @@
 
 ## D3bug processing system
+writeup:
+https://ali-ibrahim137.github.io/competitive/programming/2020/08/23/Stress-Testing.html
 
 ### Testing code 1
 ```
