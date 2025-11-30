@@ -1,0 +1,67 @@
+#pragma GCC optimize("O3")
+#pragma GCC target("sse4")
+#include <bits/stdc++.h>
+#include <chrono>   // Added for high_resolution_clock
+using namespace std;
+using namespace chrono;
+
+// ===== Type aliases =====
+using ll = long long;
+
+
+// ===== Fast I/O =====
+#define fastio ios::sync_with_stdio(false); cin.tie(nullptr);
+
+// ===== Shortcuts =====
+#define all(v) (v).begin(), (v).end()
+#define rall(v) (v).rbegin(), (v).rend()
+#define pb push_back
+#define mp make_pair
+#define ff first
+#define ss second
+
+// ===== Debug (auto-disable for online judges) =====
+#ifdef LOCAL
+#define debug(x) cerr << #x << " = "; _print(x); cerr << "\n";
+#else
+#define debug(x)
+#endif
+                                                                                                                                                                 
+// ===== Constants =====
+const int MOD = 1e9 + 7;
+
+// ===== Solve Function =====
+void solve() {
+	
+	string str;
+	cin >> str;
+
+	map <char, int> freq;
+	for (char ch : str){
+		if(ch != ' '){
+			freq[ch]++;
+		}
+	}
+	for(auto i : freq){
+		cout << i.first << " " << i.second << endl;
+	}
+}
+
+// ===== Main =====
+int32_t main() {
+    fastio;
+    
+    auto start = high_resolution_clock::now();
+
+    int t;
+    cin >> t;
+    while (t--) {
+        solve();    
+    }
+
+    auto end = high_resolution_clock::now();
+    auto duration = duration_cast<nanoseconds>(end - start);
+    //cout << "Internal Execution Time: " << duration.count() << " ns\n";
+    
+    return 0; 
+}
