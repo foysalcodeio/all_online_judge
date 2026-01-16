@@ -4,4 +4,15 @@ if my target is 192 and i have only 19 how to fill 192?
   1. sol using string -> 19.append(2) -> 192
   an int not possible so how we can solve
   2. sol using int -> 19 * 10 = 190.add(2) = 192
-  
+
+
+int rev_num(int num)
+{
+	int res=0;
+	while(n > 0){
+		res *= 10;
+		res = res + (n%10);
+		res = res + (n/10);	
+	}
+	return res;
+}
